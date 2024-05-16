@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,34 +42,8 @@ include('includes/topNav.php');
             </div>
             </td>
         </tr>
-        <tr>
-            <td>
-            <div class="form-group">
-            <label for="potassium">potassium</label>
-            <input type="text" name='k' class="form-control" pattern="[0-9.]*" title="Only numbers and dot are allowed" required>
-            </div>
-            </td>
-            <td>
-            <div class="form-group">
-            <label for="temperature">temperature</label>
-            <input type="text" name='temp' class="form-control" pattern="[0-9.]*" title="Only numbers and dot are allowed" required>
-            </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <div class="form-group">
-            <label for="Humidity">Humidity</label>
-            <input type="text" name='hum' class="form-control" pattern="[0-9.]*" title="Only numbers and dot are allowed" required>
-            </div>
-            </td>
-            <td>
-            <div class="form-group">
-            <label for="Ph">Ph</label>
-            <input type="text" name='ph' class="form-control" pattern="[0-9.]*" title="Only numbers and dot are allowed" required>
-            </div>
-            </td>
-        </tr>
+        
+      
        
 
     </table>

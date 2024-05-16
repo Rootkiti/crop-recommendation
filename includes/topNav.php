@@ -1,3 +1,7 @@
+<?php
+$parentDirectoryUrl = dirname($_SERVER['REQUEST_URI']);
+?>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -9,8 +13,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Crop Recommendation</a></li>
-        <li><a href="#">Seeds Calculation</a></li>
+        <li><a href="<?php echo $parentDirectoryUrl;?>">Crop Recommendation</a></li>
+        <li><a href="seed-rate.php">Seeds Calculation</a></li>
       </ul>
     </div>
   </div>
