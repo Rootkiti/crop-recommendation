@@ -54,6 +54,8 @@ $crop = '';
     <link rel="icon" type="image/ico" href="img/favicon.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -62,57 +64,6 @@ $crop = '';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
-
-        
-          /* Style for the animation */
-          @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        /* CSS for the container */
-        .typing-container {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 5s steps(40, end);
-            text-align: center;
-            /* width: 50%;  */
-            margin: 0 auto;
-            font-size: 18px; /* Set font size */
-            font-weight: bold;
-        }
-        body {
-            background-color: #3B3B3D; /* Light gray background color */
-          
-        }
-
-        /* Style for the form */
-        form {
-            margin-top: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
-        }
-
-        /* Style for the form inputs */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        /* Style for the submit button */
-        .btn-default {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-        }
-
-        .btn-default:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
