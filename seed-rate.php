@@ -8,22 +8,53 @@ $crop = '';
         $crop = $_POST["crop"];
 
 
-        function seed_rate_calculation($farm_area,$crop_choice){            
+        function seed_rate_calculation($farm_area,$crop_choice){ 
+            $seedRate = 0;           
             if($crop_choice == 'Maize'){
+                 $spacing = 0.7*0.15; 
+                 $twg = 350;
+
+                 $seedRate = ($farm_area * $twg * 100 * 100)/($spacing * 98 * 90 * 1000 * 1000);
+
+                 return round($seedRate,2);
 
             }elseif($crop_choice == 'Beans'){
+                $spacing = 0.45*0.2; 
+                $twg = 240;
+
+                $seedRate = ($farm_area * $twg * 100 * 100)/($spacing * 75 * 98 * 1000 * 1000);
+
+                return round($seedRate,2);
                 
-            }elseif($crop_choice == 'Soyabeans'){
+            }elseif($crop_choice == 'Soybeans'){
+                $spacing = 0.1*0.4; 
+                $twg = 188.3;
+
+                $seedRate = ($farm_area * $twg * 100 * 100)/($spacing * 97 * 70 * 1000 * 1000);
+
+                return round($seedRate,2);
                 
             }elseif($crop_choice == 'Groundnut'){
                 
             }elseif($crop_choice == 'Coffee'){
+                $spacing = 1.5*2; 
+
+                $seedRate = ($farm_area)/($spacing);
+
+                return round($seedRate,2);
                 
+            }elseif($crop_choice == 'Peas'){
+                $spacing = 0.6*0.1; 
+                $twg = 500;
+
+                $seedRate = ($farm_area * $twg * 100 * 100)/($spacing * 98 * 75 * 1000 * 1000);
+
+                return round($seedRate,2);
             }
             
         }
        
-        
+        $estimations = seed_rate_calculation($area,$crop);
    
         }
     ?>
@@ -69,9 +100,11 @@ include('includes/topNav.php');
             <select name="crop" class="form-control" required>
                 <option value="Maize">Maize</option>
                 <option value="Beans">Beans</option>
-                <option value="Soyabeans">Soyabeans</option>
+                <option value="Soybeans">Soybeans</option>
                 <option value="Groundnut">Groundnut</option>
                 <option value="Coffee">Coffee</option>
+                <option value="Peas">Peas</option>
+
             </select>
             </div>
             </td>
@@ -85,56 +118,13 @@ include('includes/topNav.php');
   <button type="submit" class="btn btn-default">Calculate</button>
 </form>
 <?php
-if(!empty($crop)){
-// Array containing 100 unique prediction statements
-$predictionStatements = [
-    "This soil is well-suited for cultivation, and it shows potential for growing $crop.",
-    "Given the favorable conditions, $crop cultivation would thrive in this soil.",
-    "$crop are suitable for cultivation in this soil, making it ideal for $crop farming.",
-    "$crop could grow well in this soil, suggesting a promising environment for $crop cultivation.",
-    "The soil conditions are conducive to farming, especially for $crop.",
-    "$crop would flourish in this soil.",
-    "$crop could be grown here, this soil indicates potential for $crop cultivation.",
-    "$crop cultivation is recommended for this soil, given its characteristics.",
-    "$crop would thrive in this soil, making it suitable for $crop cultivation.",
-    "$crop are suitable for cultivation in this soil, suggesting favorable conditions for $crop farming.",
-    "$crop could be cultivated in this soil, indicating potential for $crop cultivation.",
-    "$crop could grow well in this soil, making it suitable for $crop cultivation.",
-    "$crop are suitable for this soil, suggesting ideal conditions for $crop farming.",
-    "$crop could thrive in this soil, indicating potential for $crop cultivation.",
-    "$crop cultivation is recommended for this soil, given its characteristics.",
-    "$crop could grow well in this soil, making it suitable for $crop cultivation.",
-    "$crop are suitable for cultivation in this soil, suggesting favorable conditions for $crop farming.",
-    "$crop could be cultivated in this soil, indicating potential for $crop cultivation.",
-    "$crop could thrive in this soil, making it suitable for $crop cultivation.",
-    "$crop are suitable for this soil, suggesting ideal conditions for $crop farming.",
-    "$crop could grow well in this soil, indicating potential for $crop cultivation.",
-    "$crop cultivation is recommended for this soil, given its characteristics.",
-    "$crop could thrive in this soil, making it suitable for $crop cultivation.",
-    "$crop are suitable for cultivation in this soil, suggesting favorable conditions for $crop farming.",
-    "$crop could grow well in this soil, indicating potential for $crop cultivation.",     
-    "$crop would thrive in this soil, making it suitable for $crop cultivation.",
-    "$crop could grow well in this soil, indicating potential for lentil cultivation.",
-    "$crop are suitable for cultivation in this soil, suggesting favorable conditions for $crop farming.",
-    "$crop could be cultivated in this soil, indicating potential for eggplant cultivation.",
-    "$crop could thrive in this soil, making it suitable for $crop cultivation.",
-    "$crop are suitable for this soil, suggesting ideal conditions for $crop farming.",
-    "$crop could be grown in this soil, indicating potential for $crop cultivation."
-];
-// Get a random index from the array
-$randomIndex = array_rand($predictionStatements);
+if(!empty($estimations)){
 
-// Access the random prediction statement using the random index
-$randomStatement = $predictionStatements[$randomIndex];
-
-// Output the random prediction statement
-
-// echo $randomStatement;
 ?>
 <div id="predictionStatement" class="typing-container" style="color:white; margin-top: 20px; "></div>
 
 <script>
-var predictionStatement = "<?php echo $randomStatement; ?>";
+var predictionStatement = "<?php echo $estimations; ?> KGs";
 var container = document.getElementById("predictionStatement");
 function displayPredictionStatement() {
             var index = 0;
