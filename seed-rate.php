@@ -1,4 +1,32 @@
 
+<?php
+$crop = '';
+    // Check if POST data has been submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Retrieve the POST data
+        $area = $_POST["area"];
+        $crop = $_POST["crop"];
+
+
+        function seed_rate_calculation($farm_area,$crop_choice){            
+            if($crop_choice == 'Maize'){
+
+            }elseif($crop_choice == 'Beans'){
+                
+            }elseif($crop_choice == 'Soyabeans'){
+                
+            }elseif($crop_choice == 'Groundnut'){
+                
+            }elseif($crop_choice == 'Coffee'){
+                
+            }
+            
+        }
+       
+        
+   
+        }
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
