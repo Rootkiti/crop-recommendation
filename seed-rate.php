@@ -31,14 +31,20 @@ include('includes/topNav.php');
         <tr>
             <td>
             <div class="form-group">
-            <label for="Nitrogen">Nitrogen</label>
-            <input type="text" name='n' class="form-control" pattern="[0-9.]*" title="Only numbers and dot are allowed" required>
+            <label for="Farm Area">Farm Area In m<sup>2</sup></label>
+            <input type="text" name='area' class="form-control" pattern="[0-9.]*" title="Only numbers and dot are allowed" required>
             </div>
             </td>
             <td>
             <div class="form-group">
-            <label for="phosphorus">phosphorus</label>
-            <input type="text" name='p' class="form-control" pattern="[0-9.]*" title="Only numbers and dot are allowed" required>
+            <label for="crop">Crop</label>
+            <select name="crop" class="form-control" required>
+                <option value="Maize">Maize</option>
+                <option value="Beans">Beans</option>
+                <option value="Soyabeans">Soyabeans</option>
+                <option value="Groundnut">Groundnut</option>
+                <option value="Coffee">Coffee</option>
+            </select>
             </div>
             </td>
         </tr>
@@ -48,7 +54,7 @@ include('includes/topNav.php');
 
     </table>
 
-  <button type="submit" class="btn btn-default">Send</button>
+  <button type="submit" class="btn btn-default">Calculate</button>
 </form>
 <?php
 if(!empty($crop)){
